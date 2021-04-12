@@ -91,7 +91,12 @@ public class XLoadingView extends FrameLayout {
         addView(view);
         mResId.put(mContentViewResId, view);
     }
-
+    public void setContentViews(View view){
+        mContentViewResId = view.getId();
+        view.setVisibility(GONE);
+        addView(view);
+        mResId.put(mContentViewResId, view);
+    }
     public final void showEmpty() {
         show(mEmptyViewResId);
     }
